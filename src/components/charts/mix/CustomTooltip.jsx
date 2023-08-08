@@ -3,8 +3,6 @@ import { compactNumber } from "components/lib/utils.js";
 import styles from "components/charts/mix/CustomTooltip.module.css";
 
 const CustomTooltip = ({ active, payload, label }) => {
-  console.log(payload);
-
   if (active && payload && payload.length) {
     return (
       <div className={styles.tooltip_container}>
