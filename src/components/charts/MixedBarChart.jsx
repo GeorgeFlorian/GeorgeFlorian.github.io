@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import { transformData, Q4_CHART_DATA } from "data.js";
 import { tickNumberFormatter } from "components/lib/utils.js";
-import CustomizedStringTick from "components/charts/mix/CustomizedStringTick.jsx";
+import CustomStringTick from "components/charts/mix/CustomStringTick.jsx";
 import CustomTooltip from "components/charts/mix/CustomTooltip.jsx";
 
 export default function MixedBarChart() {
@@ -29,11 +29,12 @@ export default function MixedBarChart() {
         <XAxis
           dataKey="name"
           type={"category"}
-          tick={<CustomizedStringTick />}
+          tick={<CustomStringTick />}
+          interval={0}
         />
         <YAxis unit={"$"} tickFormatter={tickNumberFormatter} />
         <Tooltip content={<CustomTooltip />} />
-        <Legend wrapperStyle={{ bottom: -10 }} />
+        <Legend wrapperStyle={{ bottom: -20 }} />
         <Bar
           dataKey="Domestic Public Expenditures"
           stackId="a"

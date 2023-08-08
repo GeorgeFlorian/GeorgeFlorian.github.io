@@ -1,16 +1,12 @@
-import PropTypes from 'prop-types';
-import styles from "./MainLayout.module.css"
+import PropTypes from "prop-types";
+import styles from "./MainLayout.module.css";
 
-const MainLayout = ({children}) => {
-    return (
-        <div className={styles.container}>
-            {children}
-        </div>
-    );
+const MainLayout = ({ children }) => {
+  return <div className={styles.container}>{children}</div>;
 };
 
 MainLayout.propTypes = {
-    children: PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default MainLayout;
