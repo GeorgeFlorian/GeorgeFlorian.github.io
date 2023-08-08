@@ -3,12 +3,22 @@ import { compactNumber } from "components/lib/utils.js";
 import styles from "components/charts/mix/CustomTooltip.module.css";
 
 const CustomTooltip = ({ active, payload, label }) => {
+  console.log(payload);
+
   if (active && payload && payload.length) {
     return (
       <div className={styles.tooltip_container}>
-        <p className="label">{`${label} : ${compactNumber(
-          payload[0].value,
-        )}`}</p>
+        <p>{label}</p>
+        {payload.map((item, index) => (
+          <p key={index} className={styles.tooltip_item}>
+            <span
+              className={styles.tooltip_item_color}
+              style={{ color: item.fill }}
+            >
+              {item.name} : <b>{compactNumber(item.value)}</b>
+            </span>
+          </p>
+        ))}
       </div>
     );
   }
