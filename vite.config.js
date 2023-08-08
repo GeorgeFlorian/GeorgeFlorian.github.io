@@ -4,7 +4,7 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/GeorgeFlorian.github.io",
+  base: "/",
   plugins: [react(), viteTsconfigPaths()],
   server: {
     host: true,
