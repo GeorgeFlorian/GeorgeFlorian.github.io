@@ -22,29 +22,29 @@ export const data = [
 export const Q4_CHART_DATA = {
     "values": {
         "Africa": {
-            "domestic_public_expenditures": 13791843.9,
-            "domestic_public_subsidies": 10187737.65,
-            "domestic_public_revenues": 315333.73
+            "legend_1": 13791843.9,
+            "legend_2": 10187737.65,
+            "Legend_3": 315333.73
         },
         "Asia": {
-            "domestic_public_expenditures": 18968642.93,
-            "domestic_public_subsidies": 1223337.52,
-            "domestic_public_revenues": 26485819.82
+            "legend_1": 18968642.93,
+            "legend_2": 1223337.52,
+            "Legend_3": 26485819.82
         },
         "Latin America and the Caribbean": {
-            "domestic_public_expenditures": 602820274.21,
-            "domestic_public_subsidies": 299696740.64,
-            "domestic_public_revenues": 996201146.07
+            "legend_1": 602820274.21,
+            "legend_2": 299696740.64,
+            "Legend_3": 996201146.07
         },
         "Northern Mediterranean": {
-            "domestic_public_expenditures": 148959715.56,
-            "domestic_public_subsidies": 359115850.5,
-            "domestic_public_revenues": 202666666.67
+            "legend_1": 148959715.56,
+            "legend_2": 359115850.5,
+            "Legend_3": 202666666.67
         },
         "Central and Eastern Europe": {
-            "domestic_public_expenditures": 5745774.04,
-            "domestic_public_subsidies": 11733076.26,
-            "domestic_public_revenues": 64321647.05
+            "legend_1": 5745774.04,
+            "legend_2": 11733076.26,
+            "Legend_3": 64321647.05
         }
     },
     "max": 996201146.07
@@ -56,9 +56,9 @@ export const transformData = (data) => {
         const datum = data.values[region];
         transformedData.push({
             name: region,
-            "Domestic Public Expenditures": datum.domestic_public_expenditures,
-            "Domestic Public Subsidies": datum.domestic_public_subsidies,
-            "Domestic Public Revenues": datum.domestic_public_revenues
+            "Some Legend Name 1": datum.legend_1,
+            "Some Legend Name 2": datum.legend_2,
+            "Some Legend Name 3": datum.Legend_3
         });
     }
     return transformedData;

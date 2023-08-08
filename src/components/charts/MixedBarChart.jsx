@@ -35,13 +35,9 @@ export default function MixedBarChart() {
         <YAxis unit={"$"} tickFormatter={tickNumberFormatter} />
         <Tooltip content={<CustomTooltip />} />
         <Legend wrapperStyle={{ bottom: -20 }} />
-        <Bar
-          dataKey="Domestic Public Expenditures"
-          stackId="a"
-          fill="#8884d8"
-        />
-        <Bar dataKey="Domestic Public Subsidies" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="Domestic Public Revenues" fill="#ffc658" />
+        <Bar dataKey="Some Legend Name 1" stackId="a" fill="#8884d8" />
+        <Bar dataKey="Some Legend Name 2" stackId="a" fill="#82ca9d" />
+        <Bar dataKey="Some Legend Name 3" fill="#ffc658" />
       </BarChart>
     </ResponsiveContainer>
   );
