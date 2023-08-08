@@ -8,14 +8,16 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { data } from "data.js";
+import { transformData, Q4_CHART_DATA } from "data.js";
+import { tickNumberFormatter } from "components/lib/utils.js";
+import CustomizedStringTick from "components/charts/mix/CustomizedStringTick.jsx";
+import CustomTooltip from "components/charts/mix/CustomTooltip.jsx";
 
 export default function MixedBarChart() {
   return (
-    <ResponsiveContainer width={"100%"} height={"100%"}>
+    <ResponsiveContainer width={"100%"} height={400}>
       <BarChart
-        with={500}
-        data={data}
+        data={transformData(Q4_CHART_DATA)}
         margin={{
           top: 20,
           right: 30,
@@ -24,13 +26,21 @@ export default function MixedBarChart() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-        <Bar dataKey="amt" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="uv" fill="#ffc658" />
+        <XAxis
+          dataKey="name"
+          type={"category"}
+          tick={<CustomizedStringTick />}
+        />
+        <YAxis unit={"$"} tickFormatter={tickNumberFormatter} />
+        <Tooltip content={<CustomTooltip />} />
+        <Legend wrapperStyle={{ bottom: -10 }} />
+        <Bar
+          dataKey="Domestic Public Expenditures"
+          stackId="a"
+          fill="#8884d8"
+        />
+        <Bar dataKey="Domestic Public Subsidies" stackId="a" fill="#82ca9d" />
+        <Bar dataKey="Domestic Public Revenues" fill="#ffc658" />
       </BarChart>
     </ResponsiveContainer>
   );
